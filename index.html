@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contablito</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container mt-5 text-center bg-info shadow-lg p-4" style="max-width: 783px;">
+        <h2 class="pb-3"> CONTABLITO </h2>
+        <div>
+            <div class="d-flex flex-row mb-3 row-cols-2 align-items-center">
+                <label for="description" class="form-label m-0 pe-3 col-3 text-start">Descripcion</label>
+                <div class="col-9 d-flex justify-content-center">
+                    <input type="text" class="form-control" id="description" aria-describedby="description text">
+                </div>
+            </div>
+
+            <div class="d-flex flex-row row-cols-2 align-items-center mb-3">
+                <p class="m-0 pe-3 col-3 text-start"> Tipo Transaccion </p>
+                <div class="col-9">
+                    <div class="d-flex flex-row row-cols-3">
+                        <div class="form-check  col-4">
+                            <input class="form-check-input" type="radio" id="transaction-buy" name="transaction-type" value="Compra">
+                            <label class="form-check-label float-start" for="buy">
+                                Compra
+                            </label>
+                        </div>
+                        <div class="form-check  col-4">
+                            <input class="form-check-input" type="radio" id="sell" name="transaction-type" value="Venta">
+                            <label class="form-check-label px-2 float-start" for="sell">
+                                Venta
+                            </label>
+                        </div>
+                        <div class="col-4">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row row-cols-2 align-items-center mb-3">
+                <p class="m-0 pe-3 col-3 text-start"> Tipo IVA </p>
+                <div class="col-9">
+                    <div class="d-flex flex-row row-cols-3">
+                        <div class="form-check col-4">
+                            <input class="form-check-input" type="radio" id="basic" name="iva-type" value="22">
+                            <label class="form-check-label px-2 float-start" for="basic">
+                                Basico
+                            </label>
+                        </div>
+                        <div class="form-check  col-4">
+                            <input class="form-check-input" type="radio" id="minimum" name="iva-type" value="10">
+                            <label class="form-check-label px-2 float-start" for="minimum">
+                                Minimo
+                            </label>
+                        </div>
+                        <div class="form-check  col-4">
+                            <input class="form-check-input" type="radio" id="exempt" name="iva-type" value="0">
+                            <label class="form-check-label px-2 float-start" for="exempt">
+                                Exento
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row row-cols-2 align-items-center mb-3">
+                <label for="subtotal" class="form-label col-3 m-0 pe-3 text-start">Subtotal ($)</label>
+                <div class="col-9">
+                    <div class="d-flex flex-row row-cols-2">
+                        <div class="col-8">
+                            <input type="number" min="0" value="0" class="form-control w-50" id="subtotal" aria-describedby="subtotal">
+                        </div>
+                        <button id="submit-btn" type="submit" class="btn btn-primary col-4">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <table id="table" class="table table-striped table-hover text-center align-middle w-75 mb-3">
+                <thead class="bg-light">
+                    <tr>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Subtotal ($)</th>
+                        <th scope="col">IVA (%)</th>
+                        <th scope="col">Total (IVA inc.)</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="d-flex flex-row row-cols-2 align-items-center mb-3">
+            <p class="m-0 pe-3 col-6"> 
+                Total Venta: $
+                <span id="total-sell">0</span>
+            </p>
+            <p class="m-0 pe-3 col-6"> 
+                Total Compra: $
+                <span id="total-buy">0</span>
+            </p>
+        </div>
+    </div>
+</body>
+    <script src="js/table.js"></script>
+</html>
